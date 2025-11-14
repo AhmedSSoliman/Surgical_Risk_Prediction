@@ -166,7 +166,7 @@ This system predicts **9 critical postoperative complications** following major 
 
 ### End-to-End Processing Flow
 
-```mermaid
+```
 graph TB
     Start([📊 Start: Patient EHR Data]) --> DataLoad{Data Source?}
     
