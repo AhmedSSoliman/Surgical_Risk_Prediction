@@ -2,38 +2,42 @@
 # Surgical Risk Prediction Project - Required Libraries with Tested Versions
 # Tested on Python 3.11.14, macOS with Apple Silicon
 # Last updated: November 14, 2025
-# NOTE: NumPy 1.26.4 is required for spacy/thinc compatibility
+# NOTE: NumPy 1.26.4 is required for spacy/thinc binary compatibility
 
 # ============================================================================
 # Core Data Processing
 # ============================================================================
 numpy==1.26.4  # Fixed version for spacy/thinc binary compatibility
-pandas==2.2.3
-scipy==1.15.3
+pandas==2.3.3
+scipy==1.16.3
 
 # ============================================================================
 # Machine Learning
 # ============================================================================
-scikit-learn==1.6.1
-joblib==1.4.2
+scikit-learn==1.7.2
+joblib==1.5.2
 
 # ============================================================================
 # Deep Learning - PyTorch
 # ============================================================================
-torch==2.9.1
-torchvision>=0.18.0  # Compatible with torch 2.9.1
+torch==2.9.0
+torchvision==0.24.0
+pytorch-lightning==2.5.6
+torchmetrics==1.8.2
 
 # ============================================================================
 # NLP - Transformers
 # ============================================================================
 transformers==4.57.1
 tokenizers==0.22.1
+sentence-transformers==5.1.2
 
 # ============================================================================
 # NLP - Text Processing
 # ============================================================================
 spacy==3.7.5  # Compatible with numpy 1.26.4
-nltk==3.9.1
+spacy-lookups-data==1.0.5  # Additional language data for spacy
+nltk  # Version flexible, install latest
 
 # ============================================================================
 # Time Series Processing
@@ -43,9 +47,10 @@ tsfresh==0.21.1
 # ============================================================================
 # Visualization
 # ============================================================================
-matplotlib==3.10.0
+matplotlib==3.10.7
 seaborn==0.13.2
-plotly==5.24.1
+plotly==6.4.0
+graphviz==0.21  # For model architecture visualization
 
 # ============================================================================
 # Explainability
@@ -55,41 +60,35 @@ shap==0.50.0
 # ============================================================================
 # Training & Monitoring
 # ============================================================================
-tensorboard==2.20.0
-tqdm==4.67.1
+tensorboard  # Install latest version
+tqdm  # Install latest version
 
 # ============================================================================
 # Utilities
 # ============================================================================
-pyyaml==6.0.2
-jsonlines>=4.0.0
+pyyaml  # Install latest version
+jsonlines  # Install latest version
 
 # ============================================================================
-# Optional Dependencies (not required for core functionality)
+# Additional Deep Learning Tools
 # ============================================================================
-# accelerate  # For distributed training
-# pytorch-lightning  # Alternative training framework
-# torchmetrics>=1.0.0  # Additional metrics
-# sentence-transformers  # Alternative text embeddings
-# captum  # Additional explainability
-# lime  # Additional explainability
-# alibi  # Additional explainability
-# streamlit  # For web UI
-# wandb  # Alternative experiment tracking
-# lifelines  # Survival analysis
-# textstat  # Text statistics
-# tsai>=0.4.0  # Time series augmentation
-# sktime>=0.21.0  # Additional time series tools
+torchviz==0.0.3  # Model architecture visualization
 
 # ============================================================================
 # Notes:
 # ============================================================================
-# - scispacy is not included due to compatibility issues with Python 3.13
-#   The pipeline uses en_core_web_sm instead which works perfectly
+# - NumPy 1.26.4 is REQUIRED for spacy/thinc binary compatibility
+#   DO NOT upgrade to NumPy 2.x as it will break spacy imports
 # 
 # - After installation, download required spaCy model:
 #   python -m spacy download en_core_web_sm
 #
+# - For optimal performance on Apple Silicon Macs:
+#   PyTorch MPS (Metal Performance Shaders) is available but may have
+#   stability issues. The code defaults to CPU for reliability.
+#
+# - SHAP may show a warning about NumPy version requirement, but it
+#   works correctly with NumPy 1.26.4 despite preferring NumPy 2.x
 # - For GPU support on NVIDIA cards, install CUDA-enabled PyTorch:
 #   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
 #
