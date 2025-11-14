@@ -1,6 +1,3 @@
-# Complete README with Pipeline Visualization
-
-```markdown
 # 🏥 Surgical Risk Prediction System
 
 ## Advanced Multimodal AI for Predicting 9 Postoperative Complications
@@ -169,7 +166,7 @@ This system predicts **9 critical postoperative complications** following major 
 
 ### End-to-End Processing Flow
 
-```mermaid
+```
 graph TB
     Start([📊 Start: Patient EHR Data]) --> DataLoad{Data Source?}
     
@@ -1917,13 +1914,12 @@ class CustomDataLoader(MIMICDataLoader):
 If you use this system in your research, please cite:
 
 ```bibtex
-@software{surgical_risk_prediction_2024,
+@software{surgical_risk_prediction_2025,
   title={Surgical Risk Prediction System: Multimodal AI with Vibe-Tuning},
-  author={Your Name and Contributors},
-  year={2024},
+  author={Ahmed Soliman},
+  year={2025},
   institution={University of Florida},
-  url={https://github.com/yourusername/surgical-risk-prediction},
-  note={NaviGator AI Project}
+  url={https://github.com/yourusername/surgical-risk-prediction}
 }
 ```
 
@@ -1970,7 +1966,7 @@ Thank you for using the Surgical Risk Prediction System!
 
 **Developed with ❤️ by:**
 - University of Florida
-- NaviGator AI Team
+- Ahmed Soliman
 - Intelligent Critical Care Center (IC3)
 
 **For the advancement of:**
@@ -1980,7 +1976,7 @@ Thank you for using the Surgical Risk Prediction System!
 
 ---
 
-*Last Updated: November 11, 2024*
+*Last Updated: November 14, 2025*
 *Version: 1.0.0*
 *Maintained by: University of Florida NaviGator AI Team*
 
@@ -2001,4 +1997,3 @@ This completes the comprehensive README with detailed pipeline diagrams, clear e
 ✅ **Performance benchmarks**
 ✅ **FAQ section**
 
-Would you like me to create additional documentation files like `CONTRIBUTING.md`, `TUTORIAL.md`, or specific implementation guides?
