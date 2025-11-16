@@ -261,20 +261,33 @@ class VibeTunedBiomedicalEncoder(nn.Module):
         
         self.config = config or MODEL_CONFIG['vibe_tuning']
         
+        # Determine best device
+        import torch
+        if torch.cuda.is_available():
+            device_str = 'cuda'
+            print(f"✓ CUDA GPU detected: {torch.cuda.get_device_name(0)}")
+        elif torch.backends.mps.is_available():
+            device_str = 'mps'
+            print("✓ Apple Silicon GPU (MPS) detected")
+        else:
+            device_str = 'cpu'
+            print("✓ Using CPU")
+        
         # Load pre-trained model as Student Model base
         print(f"Loading Student Model base: {self.config['base_model']}")
         print("(This model will receive distilled knowledge from Teacher Model)")
+        print(f"Loading directly to {device_str.upper()}...")
+        
         import gc
         gc.collect()
         
-        # Load on CPU first for memory efficiency
-        print("Loading model on CPU first...")
+        # Load model directly to the target device
         self.base_model = AutoModel.from_pretrained(
             self.config['base_model'],
             low_cpu_mem_usage=True
-        )
+        ).to(device_str)
         self.model_config = self.base_model.config
-        print("✓ Student Model base loaded")
+        print(f"✓ Student Model base loaded on {device_str.upper()}")
         
         # Freeze base model (distillation will only update adapters)
         self._freeze_base_model()
