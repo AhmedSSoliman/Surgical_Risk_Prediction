@@ -598,7 +598,37 @@ patient_data = SampleDataGenerator.generate_sample_patient()
 
 ## 🚀 Quick Start
 
-### Option 1: Vibe-Tuning with Open Source Models (NEW!)
+### Option 1: Run in Google Colab (No Setup Required!) 🚀
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/AhmedSSoliman/Surgical_Risk_Prediction/blob/main/surgical_risk_prediction_notebook.ipynb)
+
+**Click the badge above or use this link:**
+```
+https://colab.research.google.com/github/AhmedSSoliman/Surgical_Risk_Prediction/blob/main/surgical_risk_prediction_notebook.ipynb
+```
+
+**Steps:**
+1. Click the "Open in Colab" badge above
+2. **Enable GPU:** Runtime → Change runtime type → GPU → Save
+3. Run the first cell to setup the environment (clones repo, installs dependencies)
+4. Run all cells sequentially
+
+**Benefits:**
+- ✅ No local installation required
+- ✅ Free GPU access (T4 or better)
+- ✅ All dependencies pre-installed
+- ✅ Automatic environment setup
+- ✅ Run complete pipeline in ~30-45 minutes
+
+**Note:** The first cell will automatically:
+- Clone the GitHub repository
+- Install all required packages
+- Configure the Python environment
+- Check GPU availability
+
+---
+
+### Option 2: Vibe-Tuning with Open Source Models (NEW!)
 
 ```bash
 # View all available Teacher-Student configurations
@@ -636,7 +666,7 @@ jupyter notebook surgical_risk_prediction_notebook.ipynb
 
 ---
 
-### Option 2: Run Complete Pipeline (Sample Data)
+### Option 3: Run Complete Pipeline (Sample Data)
 
 ```bash
 # Run everything with sample data (no download needed)
@@ -651,7 +681,7 @@ python run_pipeline.py --mode full --data_source sample --n_patients 10
 
 **Expected Runtime:** ~30 minutes on GPU, ~2 hours on CPU
 
-### Option 3: Launch Web Application
+### Option 4: Launch Web Application
 
 ```bash
 # Start Streamlit app
@@ -660,7 +690,7 @@ streamlit run app.py
 # Opens in browser: http://localhost:8501
 ```
 
-### Option 4: Interactive Python
+### Option 5: Interactive Python
 
 ```python
 from data.data_loader import SampleDataGenerator
